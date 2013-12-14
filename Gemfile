@@ -46,8 +46,5 @@ group :production do
     gem 'rails_12factor'
 end
 
-#fixes rails4 bug with accessing elements using attr_accessible
-gem 'protected_attributes'
-
 # prepoulate data
 gem 'faker'
