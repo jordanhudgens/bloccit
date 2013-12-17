@@ -53,3 +53,6 @@ gem 'faker'
 
 # devise for authentication
 gem 'devise'
+
+# pundit for authorization rules
+gem 'pundit'

@@ -5,4 +5,17 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   has_many :posts
+
+  before_create :set_member
+
+  def role?(base_role)
+      role == base_role.to_s
+  end
+
+  private
+
+  def set_member
+      self.role = 'member'
+  end
+
 end
