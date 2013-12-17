@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     authorize @post
   end
 
-  def edit
+  def my_edit
       @post = Post.find(params[:id])
       authorize @post
   end
