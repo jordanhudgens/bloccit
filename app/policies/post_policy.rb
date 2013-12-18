@@ -12,4 +12,7 @@ class PostPolicy < ApplicationPolicy
         user.present? && (user.role?(:admin) || user.role?(:moderator) || record.user == user)
     end
 
+    def my_edit?
+        update?
+    end
 end
