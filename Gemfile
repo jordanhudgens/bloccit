@@ -59,3 +59,7 @@ gem 'pundit'
 
 # markdown for posts
 gem 'redcarpet'
+
+# for code markdown
+gem 'albino'
+gem 'nokogiri'
