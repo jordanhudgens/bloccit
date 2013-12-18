@@ -56,3 +56,6 @@ gem 'devise'
 
 # pundit for authorization rules
 gem 'pundit'
+
+# markdown for posts
+gem 'redcarpet'
