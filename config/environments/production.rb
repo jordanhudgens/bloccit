@@ -77,4 +77,7 @@ Bloccit::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # for heroku production / email deployment
+  config.action_mailer.default_url_options = { :host => 'jdh-bloccit.herokuapp.com' }
 end
