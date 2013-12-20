@@ -63,3 +63,13 @@ gem 'redcarpet'
 # for code markdown
 gem 'albino'
 gem 'nokogiri'
+
+# gems for uploading and managing images
+gem 'carrierwave'
+gem 'mini_magick'
+
+# installing Fog for image uploading web service
+gem 'fog'
+
+# security gem
+gem 'figaro'

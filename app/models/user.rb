@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
 
   before_create :set_member
 
+  mount_uploader :avatar, AvatarUploader
+  
   def role?(base_role)
       role == base_role.to_s
   end
