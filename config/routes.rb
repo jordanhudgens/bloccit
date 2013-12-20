@@ -12,5 +12,4 @@ Bloccit::Application.routes.draw do
 
   root to: 'welcome#index'
 
-  # match "my_edit/:id" => 'posts#my_edit', via: :get, as: "my_edit_post"
 end
