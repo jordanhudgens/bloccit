@@ -1,7 +1,7 @@
 Bloccit::Application.routes.draw do
 
-  devise_for :users
-
+  # custom registration controller for image upload bug
+  devise_for :users, :controllers => { :registrations => "users/registrations" }
   # resources :posts, :path => 'articles'
 
   resources :topics do
