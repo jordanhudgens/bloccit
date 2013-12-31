@@ -73,3 +73,6 @@ gem 'fog'
 
 # security gem
 gem 'figaro'
+
+# attempted bug fix for aws
+gem 'unf'
