@@ -17,3 +17,6 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# for local uploads
+/public/uploads/
