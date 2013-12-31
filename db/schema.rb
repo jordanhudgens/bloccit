@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20131230114238) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "topic_id"
+    t.string   "post_image"
   end
 
   add_index "posts", ["topic_id"], name: "index_posts_on_topic_id"
