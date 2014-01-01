@@ -11,8 +11,10 @@
             <div class="media">
                 <div class="media-body">
                     <h4 class="media-heading">
-                        <%= image_tag (post.post_image.thumb.url) if post.post_image? %>
-                        <%= link_to (markdown post.title), [@topic, post] %>
+                        <a href="<%= topic_post_path(@topic, post) %>">
+                            <%= image_tag (post.post_image.thumb.url) if post.post_image? %>
+                            <%= markdown post.title %>
+                        </a>
                     </h4>
                     <small>
                         <%= image_tag(post.user.avatar.tiny.url) if post.user.avatar? %>
@@ -22,6 +24,7 @@
                 </div>
             </div>
         <% end %>
+        <%= will_paginate @posts %>
     </div>
 
     <div class="span4">

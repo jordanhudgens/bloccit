@@ -76,3 +76,6 @@ gem 'figaro'
 
 # attempted bug fix for aws
 gem 'unf'
+
+# to add pagination
+gem 'will_paginate', '~> 3.0'
