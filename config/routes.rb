@@ -5,7 +5,9 @@ Bloccit::Application.routes.draw do
   # resources :posts, :path => 'articles'
 
   resources :topics do
-      resources :posts, except: [:index], :path => 'articles'
+      resources :posts, except: [:index], :path => 'articles' do
+          resources :comments, only: [:create]
+      end
   end
 
   match "about" => 'welcome#about', via: :get

@@ -21,3 +21,20 @@
 .nav {
     margin-top:5px;
 }
+
+.comment-style {
+    background-color: grey;
+    border-radius: 5px;
+    padding: 12px;
+    margin-top:5px;
+    margin-bottom:5px;
+    color: white;
+}
+
+.comment-style:hover {
+    background-color: #222222;
+}
+
+#comment_header {
+    margin-left:0px;
+}

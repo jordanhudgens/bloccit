@@ -6,6 +6,8 @@ class PostsController < ApplicationController
   def show
     @topic = Topic.find(params[:topic_id])
     @post = @topic.posts.find(params[:id])
+    @comments = @post.comments.reverse_order
+    @comment = Comment.new
   end
 
   def new

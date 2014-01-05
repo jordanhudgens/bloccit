@@ -46,10 +46,17 @@ rand(4..10).times do
         # so that posts get assigned to different topics
         topics.rotate!
 
-        rand(3..7).times do
-            p.comments.create(
-                body: Faker::Lorem.paragraphs(rand(1..2)).join("\n"))
+        post_count = Post.count
+        User.all.each do |user|
+            rand(1..5).times do
+                p = Post.find(rand(1..post_count))
+                c = user.comments.create(
+                    body: Faker::Lorem.paragraphs(rand(1..2)).join("\n"),
+                    post: p)
+                c.update_attribute(:created_at, Time.now - rand(600..31526000))
+            end
         end
+
     end
 end
 

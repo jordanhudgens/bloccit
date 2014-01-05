@@ -17,3 +17,14 @@
         <% end %>
     </div>
 </div>
+
+<div class="row" id="comment_header">
+    <h2><%= @comments.count %> Comments</h2>
+    
+        <%= render @comments %>
+
+    <% if policy(@comment).create? %>
+        <hr />
+        <h4>Add a new comment</h4>
+        <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>
+    <% end %>
