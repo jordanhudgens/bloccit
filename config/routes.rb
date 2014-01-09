@@ -1,7 +1,7 @@
 Bloccit::Application.routes.draw do
 
   # custom registration controller for image upload bug
-  devise_for :users, :controllers => { :registrations => "users/registrations" }
+  devise_for :users, :controllers => { :registrations => "users/registrations", omniauth_callbacks: "users/omniauth_callbacks" }
   # resources :posts, :path => 'articles'
 
   resources :topics do

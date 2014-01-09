@@ -79,3 +79,6 @@ gem 'unf'
 
 # to add pagination
 gem 'will_paginate', '~> 3.0'
+
+# for fb logins
+gem 'omniauth-facebook'

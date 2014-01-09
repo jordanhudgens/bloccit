@@ -8,5 +8,9 @@ development:
     SENDGRID_USERNAME:  ""
     SENDGRID_PASSWORD:  ""
     AWS_BUCKET:         
+    FACEBOOK_ID:
+    FACEBOOK_SECRET:
 production:
-AWS_BUCKET:         
+    AWS_BUCKET:         
+    FACEBOOK_ID:
+    FACEBOOK_SECRET:
