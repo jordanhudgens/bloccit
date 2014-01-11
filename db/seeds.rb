@@ -64,7 +64,7 @@ end
 
 u = User.new(
     name: 'Admin User',
-    email: 'admin@example.com',
+    email: 'jordan@hudgens.com',
     password: 'helloworld',
     password_confirmation: 'helloworld')
 u.skip_confirmation!
