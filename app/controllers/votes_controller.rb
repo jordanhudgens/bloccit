@@ -18,14 +18,12 @@ class VotesController < ApplicationController
         @topic = Topic.find(params[:topic_id])
         @post = @topic.posts.find(params[:post_id])
 
-        authorize @vote
-
         @vote = @post.votes.where(user_id: current_user.id).first
     end
 
     def update_vote(new_value)
         if @vote
-            @votee.update_attribute(:value, new_value)
+            @vote.update_attribute(:value, new_value)
         else
             @vote = current_user.votes.create(value: new_value, post: @post)
         end

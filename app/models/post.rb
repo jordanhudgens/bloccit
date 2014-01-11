@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
     has_many :votes, dependent: :destroy
     belongs_to :user
     belongs_to :topic
+    after_create :create_vote
 
     mount_uploader :post_image, PostImageUploader
 
@@ -18,12 +19,26 @@ class Post < ActiveRecord::Base
         self.votes.sum(:value).to_i
     end
 
-    default_scope { order('created_at DESC') }
+    default_scope { order('rank DESC') }
 
     validates :title, length: { minimum: 5 }, presence:true
     validates :body, length: { minimum: 20 }, presence:true
     validates :topic, presence: true
     validates :user, presence: true
 
+    # this is called by the votes model to update the ranking of articles
+    def update_rank
+        age = (self.created_at - Time.new(1970,1,1)) / 86400
+        new_rank = points + age
+
+        self.update_attribute(:rank, new_rank)
+    end
+
+    private
+
+    # whoe ever created a post, should automatically be set to 'voting' it up
+    def create_vote
+        self.user.votes.create(value: 1, post: self)
+    end
 end
 
