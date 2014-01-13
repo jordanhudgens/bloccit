@@ -1,8 +1,12 @@
 class FavoritesController < ApplicationController
 
+    before_filter :authenticate_user!
+
     def create
         @topic = Topic.find(params[:topic_id])
         @post = @topic.posts.find(params[:post_id])
+
+        authorize Favorite.new
 
         favorite = current_user.favorites.create(post: @post)
 
@@ -19,6 +23,8 @@ class FavoritesController < ApplicationController
         @topic = Topic.find(params[:topic_id])
         @post = @topic.posts.find(params[:post_id])
         @favorite = current_user.favorites.find(params[:id])
+
+        authorize @favorite
 
         if @favorite.destroy
             flash[:notice] = "Removed favorite"

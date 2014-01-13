@@ -11,4 +11,7 @@ class TopicPolicy < ApplicationPolicy
         user.present? && user.role?(:admin)
     end
 
+    def public?
+        Topic.all.visible_to(user)
+    end
 end

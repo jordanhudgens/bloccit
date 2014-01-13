@@ -1,3 +1,4 @@
+<% if policy(Topic).public? %>
 <h1><%= @topic.name %></h1>
 
 <% if policy(@topic).update? %>
@@ -38,3 +39,4 @@
         <% end %>
     </div>
 </div>
+<% end %>
