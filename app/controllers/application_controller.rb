@@ -7,7 +7,8 @@ class ApplicationController < ActionController::Base
 
   # rescue from permissions details
   rescue_from Pundit::NotAuthorizedError do |exception|
-      redirect_to root_url, alert: exception.message
+      # alert for not being authorized
+      redirect_to root_url, alert: "You don't have permission to view this page"
   end
 
   # customize the page that users see when they sign in
