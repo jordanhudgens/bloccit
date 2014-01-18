@@ -5,10 +5,12 @@ Bloccit::Application.routes.draw do
   # resources :posts, :path => 'articles'
 
   #user profiles
-  resources :users, only: [:show]
+  resources :users, only: [:show, :index]
+
+  resources :posts, only: [:index]
 
   resources :topics do
-      resources :posts, except: [:index], :path => 'articles' do
+      resources :posts, except: [:index], controller: 'topics/posts', :path => 'articles' do
           resources :comments, only: [:create, :destroy]
           get '/up-vote', to: 'votes#up_vote', as: :up_vote
           get '/down-vote', to: 'votes#down_vote', as: :down_vote
