@@ -28,7 +28,8 @@
                 <%= render @posts %>
             </div>
             <div class="tab-pane" id="comments">
-                <%= render @user.comments %>
+                <!-- uses eager loading for .includes(:user) -->
+                <%= render @user.comments.includes(:user) %>
             </div>
         </div>
     </div>
