@@ -39,8 +39,12 @@
 
     <% if policy(@comment).create? %>
         <hr />
-        <h4>Add a new comment</h4>
-        <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>
+        <h3 href="#" class="js-add-comment" data-selector="js-new-comment">Add Comment</h3>
+        <br/>
+        <div class="js-new-comment hide">
+            <h4>New comment</h4>
+            <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>
+        </div>
     <% end %>
 
 </div>
