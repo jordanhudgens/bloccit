@@ -34,8 +34,9 @@
 
 <div class="row" id="comment_header">
     <h2 class="js-comments-count"><%= @comments.count %> Comments</h2>
-    
+    <div class="js-comments">
         <%= render partial: 'comments/comment', collection: @comments %>
+    </div>
 
     <% if policy(@comment).create? %>
         <hr />
